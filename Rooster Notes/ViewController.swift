@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITextFieldDelegate
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate
  {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noteTakingTextFieldBottomContraint: NSLayoutConstraint!
     @IBOutlet weak var noteTakingTextField: UITextField!
+    
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    
-    
+    var notes: [String] = []
+
     
     
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITextFieldDelegate
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     
         
-        scrollView.keyboardDismissMode = .interactive
+        //scrollView.keyboardDismissMode = .interactive
         
         //scrollView.keyboardDismissMode = .interactive
         
@@ -42,8 +42,51 @@ class ViewController: UIViewController, UITableViewDelegate, UITextFieldDelegate
         //if you add observers, you HAVE TO remove them
         NotificationCenter.default.removeObserver(self)
     }
-
     
+    
+    //MARK: - Table view data source
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return notes.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let note = notes[indexPath.row]
+        cell.textLabel?.text = note
+        
+        return cell
+    }
+
+    // MARK: - Textfield delegate
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+//    {
+//        notes.append(textField.text!)
+//        return false
+//    }
+
+    @IBAction func sendMessageTapped(_ sender: UIButton)
+    {
+        let aNote = noteTakingTextField.text
+        if (aNote?.characters.count)! > 0
+        {
+            notes.append(aNote!)
+        }
+//       self.tableView.insertRows(at: [IndexPath(row: self.notes.count-1, section: 0)], with: .automatic)
+        print(notes.count)
+        noteTakingTextField.text = ""
+        self.tableView.reloadData()
+
+        
+        
+    }
+
     //MARK: - Helper functions
     func keyboardDidShow(_ notification: Notification)
     {
