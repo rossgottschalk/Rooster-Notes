@@ -50,6 +50,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="WjG-hP-uzS"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UH-Qw-RaX">
                                 <rect key="frame" x="325" y="617" width="40" height="30"/>
@@ -78,7 +81,7 @@
                     <connections>
                         <outlet property="noteTakingTextField" destination="Kkr-9h-TFi" id="OMZ-Ml-Xlr"/>
                         <outlet property="noteTakingTextFieldBottomContraint" destination="gJu-Mf-6ME" id="hBF-pZ-yKH"/>
-                        <outlet property="tableView" destination="Ukw-m2-tTv" id="cfW-Pe-mos"/>
+                        <outlet property="tableView" destination="Ukw-m2-tTv" id="rrF-gs-S5K"/>
                         <segue destination="T5v-HI-3uD" kind="presentation" id="o8w-Fo-P9W"/>
                     </connections>
                 </viewController>
@@ -144,11 +147,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogC-qL-x2w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1449" y="139"/>
+            <point key="canvasLocation" x="1447" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DTX-Qb-iUX">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gWk-gh-clN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JkJ-UA-1i0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K7I-3z-zLa">
@@ -160,7 +164,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Swh-69-4rp"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gWk-gh-clN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-233" y="139"/>
         </scene>

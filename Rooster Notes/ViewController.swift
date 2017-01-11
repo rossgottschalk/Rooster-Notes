@@ -16,7 +16,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var noteTakingTextField: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
-    var notes: [String] = []
+    
+    var notes = [String]()
 
     
     
@@ -58,7 +59,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let note = notes[indexPath.row]
+        let note = notes.reversed()[indexPath.row]
         cell.textLabel?.text = note
         
         return cell
@@ -67,24 +68,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - Textfield delegate
 //    func textFieldShouldReturn(_ textField: UITextField) -> Bool
 //    {
-//        notes.append(textField.text!)
+//        sendNote(textField.text!)
 //        return false
 //    }
 
     @IBAction func sendMessageTapped(_ sender: UIButton)
     {
-        let aNote = noteTakingTextField.text
-        if (aNote?.characters.count)! > 0
-        {
-            notes.append(aNote!)
-        }
-//       self.tableView.insertRows(at: [IndexPath(row: self.notes.count-1, section: 0)], with: .automatic)
-        print(notes.count)
+        sendNote(noteTakingTextField.text)
         noteTakingTextField.text = ""
-        self.tableView.reloadData()
+    }
+    func sendNote(_ note: String?)
+    {
+        if let aNote = note
+        {
+            if aNote.characters.count > 0
+            {
+                notes.append(aNote)
+                tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                //tableView.reloadData()
+            }
 
-        
-        
+        }
     }
 
     //MARK: - Helper functions
@@ -99,13 +103,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         noteTakingTextFieldBottomContraint.constant = 8.0
     }
     
-    func hideKeyboard() {
+    func hideKeyboard()
+    {
         noteTakingTextField.resignFirstResponder()
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        noteTakingTextField.resignFirstResponder()
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        noteTakingTextField.resignFirstResponder()
+//    }
 
 //    @IBAction func swipeDownKeyboard(_ sender: UISwipeGestureRecognizer)
 //    {
