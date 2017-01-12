@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate //UITableViewDataSource, UITableViewDelegate,
  {
     
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noteTakingTextFieldBottomContraint: NSLayoutConstraint!
     @IBOutlet weak var noteTakingTextField: UITextField!
@@ -44,26 +46,48 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         NotificationCenter.default.removeObserver(self)
     }
     
+    // MARK: UICollectionViewDataSource
     
-    //MARK: - Table view data source
-    func numberOfSections(in tableView: UITableView) -> Int
-    {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
         return notes.count
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         let note = notes.reversed()[indexPath.row]
-        cell.textLabel?.text = note
+        cell.noteLabel.text = note
         
         return cell
     }
+
+   
+    
+    //MARK: - Table view data source
+//    func numberOfSections(in tableView: UITableView) -> Int
+//    {
+//        return 1
+//    }
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+//    {
+//        return notes.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+//    {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//        let note = notes.reversed()[indexPath.row]
+//        cell.textLabel?.text = note
+//        
+//        return cell
+//    }
 
     // MARK: - Textfield delegate
 //    func textFieldShouldReturn(_ textField: UITextField) -> Bool
@@ -84,7 +108,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if aNote.characters.count > 0
             {
                 notes.append(aNote)
-                tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                collectionView.reloadData()
+                
+                
+                //insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
                 //tableView.reloadData()
             }
 

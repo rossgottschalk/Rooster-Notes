@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B0AD6B01E2838AC00EA5231 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0AD6AF1E2838AC00EA5231 /* CollectionViewCell.swift */; };
 		5BAD9FFC1E033964009E6497 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD9FFB1E033964009E6497 /* AppDelegate.swift */; };
 		5BAD9FFE1E033964009E6497 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD9FFD1E033964009E6497 /* ViewController.swift */; };
 		5BADA0011E033964009E6497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAD9FFF1E033964009E6497 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B0AD6AF1E2838AC00EA5231 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		5BAD9FF81E033964009E6497 /* Rooster Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rooster Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAD9FFB1E033964009E6497 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BAD9FFD1E033964009E6497 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				5BAD9FFB1E033964009E6497 /* AppDelegate.swift */,
 				5BAD9FFD1E033964009E6497 /* ViewController.swift */,
+				5B0AD6AF1E2838AC00EA5231 /* CollectionViewCell.swift */,
 				5BAD9FFF1E033964009E6497 /* Main.storyboard */,
 				5BADA0051E033964009E6497 /* Assets.xcassets */,
 				5BADA0071E033964009E6497 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				5BAD9FFE1E033964009E6497 /* ViewController.swift in Sources */,
 				5BADA0041E033964009E6497 /* Rooster_Notes.xcdatamodeld in Sources */,
+				5B0AD6B01E2838AC00EA5231 /* CollectionViewCell.swift in Sources */,
 				5BAD9FFC1E033964009E6497 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +310,7 @@
 				5BADA00F1E033964009E6497 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
