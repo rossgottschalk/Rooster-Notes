@@ -21,15 +21,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kkr-9h-TFi">
-                                <rect key="frame" x="20" y="617" width="295" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Note..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kkr-9h-TFi">
+                                <rect key="frame" x="20" y="633" width="295" height="30"/>
                                 <gestureRecognizers/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UH-Qw-RaX">
-                                <rect key="frame" x="325" y="617" width="40" height="30"/>
+                                <rect key="frame" x="325" y="633" width="40" height="30"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TBh-cS-bcQ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="565"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j6d-Rd-L4L">
                                     <size key="itemSize" width="374" height="60"/>
@@ -54,7 +54,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bj2-lH-TWe">
-                                                    <rect key="frame" x="27" y="20" width="42" height="21"/>
+                                                    <rect key="frame" x="27" y="20" width="319" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -72,18 +72,18 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="TBh-cS-bcQ" secondAttribute="trailing" id="692-eb-bd4"/>
                             <constraint firstAttribute="trailing" secondItem="Kkr-9h-TFi" secondAttribute="trailing" constant="60" id="9ob-SI-vnt"/>
                             <constraint firstItem="TBh-cS-bcQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="N2O-o1-kSp"/>
                             <constraint firstItem="2UH-Qw-RaX" firstAttribute="centerY" secondItem="Kkr-9h-TFi" secondAttribute="centerY" id="T2Z-Ur-M0A"/>
                             <constraint firstAttribute="trailing" secondItem="2UH-Qw-RaX" secondAttribute="trailing" constant="10" id="Zxo-lu-Ckd"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Kkr-9h-TFi" secondAttribute="bottom" constant="20" id="gJu-Mf-6ME"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Kkr-9h-TFi" secondAttribute="bottom" constant="4" id="gJu-Mf-6ME"/>
                             <constraint firstItem="Kkr-9h-TFi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="gjH-6I-h1f"/>
                             <constraint firstItem="TBh-cS-bcQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ixB-hj-QY0"/>
                             <constraint firstItem="2UH-Qw-RaX" firstAttribute="leading" secondItem="Kkr-9h-TFi" secondAttribute="trailing" constant="10" id="kVX-5c-h7X"/>
-                            <constraint firstItem="Kkr-9h-TFi" firstAttribute="top" secondItem="TBh-cS-bcQ" secondAttribute="bottom" id="wql-td-5vS"/>
+                            <constraint firstItem="Kkr-9h-TFi" firstAttribute="top" secondItem="TBh-cS-bcQ" secondAttribute="bottom" constant="4" id="wql-td-5vS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7be-Es-KeS"/>
